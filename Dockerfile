@@ -6,6 +6,7 @@ WORKDIR /src
 
 RUN git clone https://github.com/openbao/openbao-plugins .
 
+RUN mkdir -p dist
 RUN touch dist/sha_256.txt
 
 RUN go build -o dist/openbao-auth-aws ./auth/aws
