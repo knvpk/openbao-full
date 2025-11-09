@@ -1,3 +1,5 @@
+ARG VERSION="2.4"
+
 FROM golang:1.24 AS builder
 
 WORKDIR /src
@@ -16,7 +18,7 @@ RUN go build -o dist/openbao-secrets-gcpkms ./secrets/gcpkms
 RUN go build -o dist/openbao-secrets-nomad ./secrets/nomad
 
 
-FROM openbao/openbao:2.4 AS runtime
+FROM openbao/openbao:${VERSION} AS runtime
 
 RUN mkdir -p /openbao/plugins
 
