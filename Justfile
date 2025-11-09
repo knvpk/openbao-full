@@ -6,4 +6,4 @@ test:
 register:
     export BAO_ADDR='http://0.0.0.0:1337'
     bao login foobar
-    bao plugin register -sha256="" secret /openbao-secrets-aws
+    bao plugin register -sha256="" secret secrets-aws
