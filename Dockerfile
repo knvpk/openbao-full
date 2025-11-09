@@ -2,6 +2,9 @@ ARG VERSION="2.4"
 
 FROM golang:1.24 AS builder
 
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+
 WORKDIR /src
 
 RUN git clone https://github.com/openbao/openbao-plugins .
