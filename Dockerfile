@@ -48,3 +48,5 @@ FROM openbao/openbao:${VERSION} AS runtime
 RUN mkdir -p /openbao/plugins
 
 COPY --from=builder /src/dist/ /openbao/plugins/
+
+RUN chown -R openbao:openbao /openbao/plugins/
